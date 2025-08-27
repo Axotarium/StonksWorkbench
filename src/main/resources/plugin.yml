@@ -1,0 +1,8 @@
+name: StonksWorkbench
+api-version: 1.20
+author: Qg9
+version: 1
+main: fr.qg.workbench.WorkbenchPlugin
+commands:
+  stonksworkbench:
+    description: "open custom workbench"

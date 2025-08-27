@@ -1,0 +1,126 @@
+menu:
+  title: "&lEtablie custom"
+  pattern:
+    - "# # # # # # # # #"
+    - "# R # * * * * * #"
+    - "# * # * * * * * #"
+    - "# $ # * * * * * #"
+    - "# # # # # # # # #"
+  items:
+    '#':
+      type: RED_STAINED_GLASS_PANE
+      name: "&7"
+    '$':
+      type: ANVIL
+      name: "&a&lFARBIQUER"
+results:
+  LACK_OF_ITEMS:
+    title: "&lErreur !"
+    pattern:
+      - "* * * * * * * * *"
+      - "* * * * * * * * *"
+      - "* * * * $ * * * *"
+      - "* * * * * * * * *"
+      - "* * * * * * * * *"
+    items:
+      '$':
+        type: RED_STAINED_GLASS_PANE
+        name: "&cPas assez d'item !"
+  LACK_OF_REQUIREMENTS:
+    title: "&lErreur !"
+    pattern:
+      - "* * * * * * * * *"
+      - "* * * * * * * * *"
+      - "* * * * $ * * * *"
+      - "* * * * * * * * *"
+      - "* * * * * * * * *"
+    items:
+      '$':
+        type: RED_STAINED_GLASS_PANE
+        name: "&cVous ne validez pas les prérequis !"
+    GOOD:
+      title: "&lItem fabriqué !"
+      pattern:
+        - "* * * * * * * * *"
+        - "* * * * * * * * *"
+        - "* * * * $ * * * *"
+        - "* * * * * * * * *"
+        - "* * * * * * * * *"
+      items:
+        '$':
+          type: GREEN_STAINED_GLASS_PANE
+          name: "&cVotre item est crée !"
+# CRAFTS
+crafts:
+  diamond_sword_custom:
+    result:
+      type: DIAMOND_SWORD
+      amount: 1
+      name: "&bÉpée ciselée"
+      lore:
+        - "&7Forgée à la main"
+        - "&fModèle &e#1234"
+      custom_model_data: 1234
+      enchants:
+        DAMAGE_ALL: 5
+        DURABILITY: 3
+      flags:
+        - HIDE_ENCHANTS
+        - HIDE_ATTRIBUTES
+      unbreakable: false
+    recipes:
+      diamond:
+        material: DIAMOND
+        amount: 2
+      handle:
+        material: STICK
+        amount: 1
+    requirements:
+
+  ia_super_hammer:
+    result:
+      itemsadder: "myitems:super_hammer"
+    recipes:
+      iron_block:
+        material: IRON_BLOCK
+        amount: 1
+      handle_tagged:
+        material: STICK
+        nbtkey: "workbench:handle"
+        amount: 1
+    requirements:
+
+  leather_chest_colored:
+    result:
+      type: LEATHER_CHESTPLATE
+      leather_color: "#FF6A00"
+      name: "&6Veste en cuir"
+      lore:
+        - "&7Teinte spéciale"
+      flags:
+        - HIDE_DYE
+    recipes:
+      leather:
+        material: LEATHER
+        amount: 8
+      string:
+        material: STRING
+        amount: 2
+    requirements:
+
+  speed_potion:
+    result:
+      type: POTION
+      potion_type: SPEED
+      name: "&bPotion de vitesse"
+    recipes:
+      nether_wart:
+        material: NETHER_WART
+        amount: 1
+      sugar:
+        material: SUGAR
+        amount: 1
+      bottle:
+        material: GLASS_BOTTLE
+        amount: 1
+    requirements:
