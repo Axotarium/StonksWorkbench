@@ -56,7 +56,7 @@ object ItemLoader {
                 //meta.spigot().isUnbreakable = true
             }
         }
-        section.getInt("custom_model_data", section.getInt("model-data", Int.MIN_VALUE))
+        section.getInt("custom_model_data", section.getInt("modeldata", Int.MIN_VALUE))
             .takeIf { it != Int.MIN_VALUE }?.let { setCustomModelData(meta, it) }
 
         stack.itemMeta = meta
@@ -156,4 +156,26 @@ object ItemLoader {
         runCatching { Material.valueOf(name) }.getOrNull()
 
     private fun colorize(s: String) = ChatColor.translateAlternateColorCodes('&', s)
+
+    fun getVisualItem(section: ConfigurationSection): ItemStack {
+        val type = section.getString("type") ?: error("Missing 'type'")
+        val mat = Material.matchMaterial(type) ?: error("Invalid material: $type")
+        val stack = ItemStack(mat, 1)
+        val meta = stack.itemMeta
+
+        section.getString("name")?.let { meta.setDisplayName(colorize(it)) }
+        section.getStringList("lore").takeIf { it.isNotEmpty() }?.let { meta.lore = colorize(it) }
+        if (section.contains("modeldata")) meta.setCustomModelData(section.getInt("modeldata"))
+
+        if (section.getBoolean("enchanted", false)) {
+            meta.addEnchant(Enchantment.LUCK, 1, true)
+            meta.addItemFlags(ItemFlag.HIDE_ENCHANTS)
+        }
+
+        stack.itemMeta = meta
+        return stack
+    }
+
+    private fun colorize(lines: List<String>): List<String> =
+        lines.map { colorize(it) }
 }

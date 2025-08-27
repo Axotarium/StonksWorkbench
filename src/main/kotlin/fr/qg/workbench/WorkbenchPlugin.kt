@@ -4,6 +4,7 @@ import com.jonahseguin.drink.Drink
 import fr.qg.menu.MenuAPI
 import fr.qg.workbench.commands.ItemProvider
 import fr.qg.workbench.commands.WorkBenchCommand
+import fr.qg.workbench.economy.EconomyBridge
 import fr.qg.workbench.managers.BenchManager
 import fr.qg.workbench.managers.ItemsManager
 import fr.qg.workbench.models.CraftableItem
@@ -20,6 +21,8 @@ class WorkbenchPlugin : JavaPlugin() {
         saveDefaultConfig()
 
         MenuAPI.register(plugin)
+
+        EconomyBridge.setup()
 
         ItemsManager.load()
         BenchManager.load()

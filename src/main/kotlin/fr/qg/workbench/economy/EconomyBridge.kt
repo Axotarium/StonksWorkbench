@@ -1,6 +1,8 @@
 package fr.qg.workbench.economy
 
-/**
+import net.milkbowl.vault.economy.Economy
+import org.bukkit.Bukkit
+
 object EconomyBridge {
     var economy: Economy? = null
         private set
@@ -24,4 +26,4 @@ object EconomyBridge {
         val eco = economy ?: return false
         return eco.withdrawPlayer(player, amount).transactionSuccess()
     }
-}**/
+}

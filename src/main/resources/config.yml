@@ -1,5 +1,17 @@
-menu:
-  title: "&lEtablie custom"
+main:
+  title: "&lWorkbench"
+  pattern:
+    - "# # # # # # # # #"
+    - "# * * * * * * * #"
+    - "# * * * * * * * #"
+    - "# * * * * * * * #"
+    - "# # # # # # # # #"
+  items:
+    '#':
+      type: RED_STAINED_GLASS_PANE
+      name: "&7"
+workbench:
+  title: "&lCustom Workbench"
   pattern:
     - "# # # # # # # # #"
     - "# R # * * * * * #"
@@ -12,10 +24,10 @@ menu:
       name: "&7"
     '$':
       type: ANVIL
-      name: "&a&lFARBIQUER"
+      name: "&a&lMAKE"
 results:
   LACK_OF_ITEMS:
-    title: "&lErreur !"
+    title: "&lERROR !"
     pattern:
       - "* * * * * * * * *"
       - "* * * * * * * * *"
@@ -25,21 +37,12 @@ results:
     items:
       '$':
         type: RED_STAINED_GLASS_PANE
-        name: "&cPas assez d'item !"
-  LACK_OF_REQUIREMENTS:
-    title: "&lErreur !"
-    pattern:
-      - "* * * * * * * * *"
-      - "* * * * * * * * *"
-      - "* * * * $ * * * *"
-      - "* * * * * * * * *"
-      - "* * * * * * * * *"
-    items:
-      '$':
-        type: RED_STAINED_GLASS_PANE
-        name: "&cVous ne validez pas les prérequis !"
+        name: "&cNot Enough Item !"
+        lore:
+          - "&7You doesn't have the requirement"
+          - "&7To craft the item !"
     GOOD:
-      title: "&lItem fabriqué !"
+      title: "&lItem Crafted!"
       pattern:
         - "* * * * * * * * *"
         - "* * * * * * * * *"
@@ -49,7 +52,7 @@ results:
       items:
         '$':
           type: GREEN_STAINED_GLASS_PANE
-          name: "&cVotre item est crée !"
+          name: "&cItem Crafted"
 # CRAFTS
 crafts:
   diamond_sword_custom:
